@@ -1,7 +1,11 @@
 import './App.css';
 import React, {useState} from 'react';
-import project from './data/project'
-import Display from './pages/Display';
+import { Routes, Route } from 'react-router-dom';
+
+import Navbar from './components/Navbar';
+
+import Home from './pages/Home';
+import Wizard from './pages/Wizard';
 
 function App() {
 
@@ -20,9 +24,12 @@ function App() {
 
   return (
     <div className="App">
-      {project.projektek.map((item, i) => (
-              <Display item={item} key={i}/>
-            ))}
+      <Navbar/>
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/login' element={<Wizard />}/>
+        </Routes>
+  
     </div>
   );
 }
