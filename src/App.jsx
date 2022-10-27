@@ -21,7 +21,6 @@ function App() {
     console.log(data); //useState-hez rendelném az eredményt, majd map-elném
   }
 
-
   return (
     <div className="App">
       <Navbar/>

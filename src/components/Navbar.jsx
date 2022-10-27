@@ -9,7 +9,7 @@ const Navbar = () => {
         navigate(path);
     }
   return (
-    <nav className='navbar' style={{backgroundColor:"#3d6487", height: "40px", display:"flex", alignItems: "center",justifyContent:"space-between"}}>
+    <nav className='navbar' style={{backgroundColor:"#3387ac", height: "40px", display:"flex", alignItems: "center", justifyContent:"space-between"}}>
         <div className='left'> 
         <Button 
             onClick={() => nav('/')}
@@ -17,14 +17,14 @@ const Navbar = () => {
             color="info"
             size="small"
             >
-              Home</Button>
+              Kezdőlap</Button>
         <Button 
             onClick={() => nav('/new')}
             variant="contained"
             color="info"
             size="small"
             >
-              Add New Project</Button>
+              Új projekt hozzáadása</Button>
         </div>
     </nav>
   )

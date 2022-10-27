@@ -2,9 +2,10 @@ import React from 'react';
 
 function Display({item}) {
   return (
-    <div className='dp'>
-        <p>{item.név}</p>
-    </div>
+      <div className='box'>
+          <h1>{item.név}</h1>
+          <p>{item.leírás}</p>
+      </div>
   )
 }
 
