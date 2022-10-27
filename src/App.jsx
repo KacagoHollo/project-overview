@@ -27,7 +27,7 @@ function App() {
       <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Wizard />}/>
+          <Route path='/new' element={<Wizard />}/>
         </Routes>
   
     </div>
