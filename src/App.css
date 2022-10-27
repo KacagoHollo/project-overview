@@ -2,10 +2,10 @@
 main {
   height: 100vh;
 
-  margin: 5px 10px 0 5px;
+  margin: 30px 10px 0 5px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   gap: 20px; 
   flex-wrap: wrap;
 }
@@ -24,6 +24,8 @@ div.box {
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 20px #05386b;
+
+  margin-bottom: 20px;
 }
 
 div.box h1 {

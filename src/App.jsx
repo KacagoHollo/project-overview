@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import Home from './pages/Home';
-import Wizard from './pages/Wizard';
+import WizardApp from './components/WizardApp';
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
       <Navbar/>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/new' element={<Wizard />}/>
+          <Route path='/new' element={<WizardApp />}/>
         </Routes>
   
     </div>
