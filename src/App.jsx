@@ -1,11 +1,11 @@
 import './App.css';
 import React, {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
-
+import { WizardContext } from './components/WizardContext';
 import Navbar from './components/Navbar';
+import WizardApp from './components/WizardApp';
 
 import Home from './pages/Home';
-import WizardApp from './components/WizardApp';
 
 function App() {
 
@@ -22,6 +22,7 @@ function App() {
   }
 
   return (
+    <WizardContext.Provider value={{}}>
     <div className="App">
       <Navbar/>
         <Routes>
@@ -30,6 +31,7 @@ function App() {
         </Routes>
   
     </div>
+    </WizardContext.Provider>
   );
 }
 
