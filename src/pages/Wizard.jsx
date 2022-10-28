@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { WizardContext } from '../components/WizardContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,7 +6,14 @@ import Button from "@mui/material/Button";
 
 const Wizard = ({children}) => {
 
-  const { name, setName } = useContext(WizardContext);
+  // const name = useContext(WizardContext);
+  // const setName = useContext(WizardContext);
+  // const [name, setName] = useState([]);
+  const [description, setDescription] = useState([]);
+  const [nameValue, setNameValue] = useState("")
+  const [descValue, setDescValue] = useState("")
+  let pNames = [];
+  let pDesc = [];
   
   const navigate = useNavigate();
   const nav = (path) => {
@@ -14,7 +21,13 @@ const Wizard = ({children}) => {
       navigate(path);
   }
 
-  const [activePage, setActivePage] = useState(0)
+  const [activePage, setActivePage] = useState(0);
+
+  const [name, setName] = useState([]);
+  const [inputValue, setInputValue] = useState([]);
+  // const [state, setState] = useState([]);
+  // const [datas, setDatas] = useState({});
+  // const [add, setAdd] = useState([]);
 
   const pages = React.Children.toArray(children)
   const currentPage = pages[activePage]
@@ -26,16 +39,33 @@ const Wizard = ({children}) => {
 
   const next = (e) => {
     e.preventDefault();
-    setActivePage(index => index + 1)
+    setActivePage(index => index + 1);
+    setName([pNames]);
+    setDescription([pDesc]);
+    pNames.push(nameValue);
+    pDesc.push(descValue);
+    setNameValue("");
+    setDescValue("");
   }
 
-  const submit = (e) => {
+  console.log(pNames);
+  console.log(name);
+
+
+  const submit = async (e) => {
     e.preventDefault();
+
+    await pNames.push(nameValue);
+    await pDesc.push(descValue);
     nav('/succeed')
   }
 
+
+
+    
+    
   return (
-    <WizardContext.Provider value={{previous, next}}>
+    <WizardContext.Provider value={{next, nameValue, setNameValue, description, setDescription, pNames}}>
       <div className='wizard'>
         <div className='wContent'>
           {currentPage}
