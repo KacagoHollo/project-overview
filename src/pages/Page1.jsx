@@ -13,10 +13,10 @@ const Page1 = () => {
 
   return (
     <WizardContext.Provider value={{name, setName}}>
-    <div>
+    <div className='one'>
         <h1>Első oldal</h1>
-        <ProgressBar completed={0} />
-        {/* <form onSubmit={next}> */}
+        <ProgressBar completed={33} customLabel="1/3" />
+        <form onSubmit={next}>
             <div className='name'>
                 <TextField 
                     variant="filled"
@@ -45,7 +45,7 @@ const Page1 = () => {
                     InputProps={{ inputProps: { minLength: 50, maxLength: 500 } }}
                     onChange={(event) => setDescription(event.target.value)}/>
             </div>
-        {/* </form> */}
+        </form>
     </div>
     </WizardContext.Provider>
   )

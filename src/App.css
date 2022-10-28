@@ -16,8 +16,9 @@ div.box {
 
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: 5px; 
 
@@ -40,8 +41,60 @@ div.box p {
   top: 60px;
 }
 
+div.box img {
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #05386b;
+}
 
 footer {
   position: absolute;
   bottom: -40px;
 }
+
+div.one, div.two, div.three {
+  margin: 15px 20px 15px 20px;
+}
+div.one h1, div.two h1, div.three h1 {
+  text-align: center;
+  margin: 15px 0 15px 0;
+}
+
+div.name {
+  height: 50vh;
+
+  margin: 30px 60px 0 60px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 20px; 
+  flex-wrap: wrap;
+}
+
+div.college-name {
+  margin: 30px 60px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+div.link {
+  margin: 30px 60px 0 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+div.wButton {
+  /* width: 50%; */
+  text-align: center;
+}
+
+div.btn-box {
+  /* width: 50%; */
+  text-align: center;
+}
+/* div.wizard {
+  display: flex;
+  justify-content: center;
+} */

@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import WizardApp from './components/WizardApp';
 
 import Home from './pages/Home';
-import Succeed from './pages/Succeed'
+import Succeed from './pages/Succeed';
 
 function App() {
 

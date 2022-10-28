@@ -29,9 +29,9 @@ const handleAddClick = () => {
 };
 
   return (
-    <div>
+    <div className='three'>
         <h1>Utolsó oldal</h1>
-        <ProgressBar completed={66} />
+        <ProgressBar completed={99} customLabel="3/3"/>
         {inputList.map((x, i) => {
             return (
                 <div key={i} className="link">
@@ -50,13 +50,14 @@ const handleAddClick = () => {
                 />
             
                     <div className="btn-box">
-                        {inputList.length !== 1 && <button className="mr10"
+                        {inputList.length !== 1 && <Button className="mr10"
+                        color='secondary'
                         onClick={() => handleRemoveClick(i)}
-                        >Remove</button>}
+                        >Eltávolít</Button>}
                         
                         {inputList.length - 1 === i && <Button
                         onClick={handleAddClick}
-                        >Add</Button>}
+                        >Új link</Button>}
                     </div>
                 </div>
             );

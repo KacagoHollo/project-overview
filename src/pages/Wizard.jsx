@@ -19,15 +19,18 @@ const Wizard = ({children}) => {
   const pages = React.Children.toArray(children)
   const currentPage = pages[activePage]
 
-  const previous = () => {
+  const previous = (e) => {
+    e.preventDefault();
     setActivePage(index => index - 1)
   }
 
-  const next = () => {
+  const next = (e) => {
+    e.preventDefault();
     setActivePage(index => index + 1)
   }
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     nav('/succeed')
   }
 
@@ -42,7 +45,7 @@ const Wizard = ({children}) => {
           <Button
             type='button'
             className='wButton-left'
-            color="info"
+            color="success"
             size="small"
             onClick={previous}
           >
@@ -54,10 +57,10 @@ const Wizard = ({children}) => {
           <Button
             type='button'
             className='wButton-right'
-            color="info"
+            color="success"
             size="small"
+            // disabled={!name}
             onClick={next}
-            disabled={name}
           >
             Következő
           </Button>
@@ -65,9 +68,10 @@ const Wizard = ({children}) => {
 
           { activePage === pages.length - 1 ? (
             <Button
-            type='button'
+            type='submit'
             className='wButton-right'
-            color="info"
+            color="secondary"
+            variant="contained"
             size="small"
             onClick={submit}
           >
