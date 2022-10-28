@@ -6,7 +6,7 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import { WizardContext } from '../components/WizardContext';
 
 const Page1 = () => {
-    const { next, name, setName,  description, setDescription, nameValue, setNameValue, descValue, setDescValue} = useContext(WizardContext);
+    const { nextA,  nameValue, setNameValue, descValue, setDescValue} = useContext(WizardContext);
 
     // const [nameValue, setNameValue] = useState("")
     // const [descValue, setDescValue] = useState("")
@@ -26,37 +26,12 @@ const Page1 = () => {
         console.log(descValue);
     }
 
-    const handleFormSubmit = () => {
-        // setName([pNames]);
-        // setDescription([pDesc]);
-        // pNames.push(nameValue);
-        // pDesc.push(descValue);
-        // setNameValue("");
-        // setDescValue("");
-    }
-    // const descFormSubmit = (e) => {
-    //     setDescription([pDesc]);
-    //     pDesc.push(value);
-    //     setValue("")
-    // }
-    // const descInputChange = (e) => {
-    //         setDescription(description)
-        // }
-    // const { name, value } = e.target;
-        // setDatas({ ...datas, [name]: value });
-
-    // const descriptionChange = (e) => {
-    //     const { description, value } = e.target;
-    //     // setDatas({ ...datas, [description]: value });
-    //   }
-    // console.log(pNames);
-    // console.log(pDesc);
-
     return (
+        <WizardContext.Provider value={nameValue}>
     <div className='one'>
         <h1>Első oldal</h1>
         <ProgressBar completed={33} customLabel="1/3" />
-        <form onSubmit={next}>
+        <form onSubmit={nextA}>
             <div className='name'>
                 <TextField
                     variant="filled"
@@ -87,6 +62,7 @@ const Page1 = () => {
             </div>
         </form>
     </div>
+    </WizardContext.Provider>
 
   )
 }

@@ -37,8 +37,8 @@ const Wizard = ({children}) => {
     setActivePage(index => index - 1)
   }
 
-  const next = (e) => {
-    e.preventDefault();
+  const nextA = (e) => {
+    
     setActivePage(index => index + 1);
     setName([pNames]);
     setDescription([pDesc]);
@@ -46,6 +46,11 @@ const Wizard = ({children}) => {
     pDesc.push(descValue);
     setNameValue("");
     setDescValue("");
+  }
+  const next = (e) => {
+    e.preventDefault();
+    setActivePage(index => index + 1);
+
   }
 
   console.log(pNames);
@@ -65,7 +70,7 @@ const Wizard = ({children}) => {
     
     
   return (
-    <WizardContext.Provider value={{next, nameValue, setNameValue, description, setDescription, pNames}}>
+    <WizardContext.Provider value={{next, nextA, nameValue, setNameValue, description, setDescription, pNames}}>
       <div className='wizard'>
         <div className='wContent'>
           {currentPage}
