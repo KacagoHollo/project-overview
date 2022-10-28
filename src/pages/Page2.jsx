@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 
+import ProgressBar from "@ramonak/react-progress-bar";
+
 function Page2() {
 
     const [inputList, setInputList] = useState([{ name: "", position: "" }]);
@@ -29,6 +31,7 @@ const handleAddClick = () => {
   return (
     <div>
         <h1>Második oldal</h1>
+        <ProgressBar completed={33} />
         {inputList.map((x, i) => {
             return (
                 <div key={i} className="college-name">

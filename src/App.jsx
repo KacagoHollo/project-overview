@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import WizardApp from './components/WizardApp';
 
 import Home from './pages/Home';
+import Succeed from './pages/Succeed'
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/new' element={<WizardApp />}/>
+          <Route path='/succeed' element={<Succeed />}/>
         </Routes>
   
     </div>

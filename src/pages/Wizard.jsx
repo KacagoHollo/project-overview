@@ -28,7 +28,7 @@ const Wizard = ({children}) => {
   }
 
   const submit = () => {
-    nav('/')
+    nav('/succeed')
   }
 
   return (

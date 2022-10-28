@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react';
 import TextField from "@mui/material/TextField";
 
+import ProgressBar from "@ramonak/react-progress-bar";
+
 import { WizardContext } from '../components/WizardContext';
 
 const Page1 = () => {
@@ -13,6 +15,7 @@ const Page1 = () => {
     <WizardContext.Provider value={{name, setName}}>
     <div>
         <h1>Első oldal</h1>
+        <ProgressBar completed={0} />
         {/* <form onSubmit={next}> */}
             <div className='name'>
                 <TextField 
