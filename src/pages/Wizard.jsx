@@ -1,4 +1,4 @@
-import React, {useState, useEffect, useContext} from 'react';
+import React, {useState} from 'react';
 import { WizardContext } from '../components/WizardContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -6,9 +6,6 @@ import Button from "@mui/material/Button";
 
 const Wizard = ({children}) => {
 
-  // const name = useContext(WizardContext);
-  // const setName = useContext(WizardContext);
-  // const [name, setName] = useState([]);
   const [description, setDescription] = useState([]);
   const [nameValue, setNameValue] = useState("")
   const [descValue, setDescValue] = useState("")
@@ -24,10 +21,6 @@ const Wizard = ({children}) => {
   const [activePage, setActivePage] = useState(0);
 
   const [name, setName] = useState([]);
-  const [inputValue, setInputValue] = useState([]);
-  // const [state, setState] = useState([]);
-  // const [datas, setDatas] = useState({});
-  // const [add, setAdd] = useState([]);
 
   const pages = React.Children.toArray(children)
   const currentPage = pages[activePage]
@@ -38,15 +31,22 @@ const Wizard = ({children}) => {
   }
 
   const nextA = (e) => {
-    
+    e.preventDefault();
     setActivePage(index => index + 1);
-    setName([pNames]);
-    setDescription([pDesc]);
+    setName(pNames);
+    setDescription(pDesc);
     pNames.push(nameValue);
     pDesc.push(descValue);
     setNameValue("");
     setDescValue("");
   }
+
+  const nameArray = () => {
+    return (
+      <h1>{pNames[0]}</h1>
+    )
+  }
+
   const next = (e) => {
     e.preventDefault();
     setActivePage(index => index + 1);
@@ -63,14 +63,10 @@ const Wizard = ({children}) => {
     await pNames.push(nameValue);
     await pDesc.push(descValue);
     nav('/succeed')
-  }
-
-
-
-    
+  }  
     
   return (
-    <WizardContext.Provider value={{next, nextA, nameValue, setNameValue, description, setDescription, pNames}}>
+    <WizardContext.Provider value={{next, nextA, nameValue, setNameValue, description, setDescription, pNames, name, nameArray}}>
       <div className='wizard'>
         <div className='wContent'>
           {currentPage}

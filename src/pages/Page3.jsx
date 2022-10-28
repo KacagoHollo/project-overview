@@ -66,7 +66,6 @@ const handleAddClick = () => {
                 </form>
             );
         })}
-        {/* <div style={{ marginTop: 20 }}>{JSON.stringify(inputList)}</div> */}
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import TextField from "@mui/material/TextField";
 
 import ProgressBar from "@ramonak/react-progress-bar";
@@ -7,13 +7,6 @@ import { WizardContext } from '../components/WizardContext';
 
 const Page1 = () => {
     const { nextA,  nameValue, setNameValue, descValue, setDescValue} = useContext(WizardContext);
-
-    // const [nameValue, setNameValue] = useState("")
-    // const [descValue, setDescValue] = useState("")
-    // const [name, setName] = useState([]);
-    // const [description, setDescription] = useState([]);
-    // let pNames = [];
-    // let pDesc = [];
 
     const nameChange = (e) => {
         e.preventDefault();
