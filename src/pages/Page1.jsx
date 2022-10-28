@@ -9,12 +9,8 @@ const Page1 = () => {
     const [name, setName] = useState('');
     const [description, setDescription] = useState('');
 
-
-
-    // const nextPage = () => {
-
-    // }
   return (
+    <WizardContext.Provider value={{name, setName}}>
     <div>
         <h1>Első oldal</h1>
         {/* <form onSubmit={next}> */}
@@ -40,7 +36,7 @@ const Page1 = () => {
                     type="text" 
                     placeholder="Projekt leírása" 
                     multiline
-                    rows={5}
+                    minRows={5}
                     maxRows={10}
                     value={description} 
                     InputProps={{ inputProps: { minLength: 50, maxLength: 500 } }}
@@ -48,6 +44,7 @@ const Page1 = () => {
             </div>
         {/* </form> */}
     </div>
+    </WizardContext.Provider>
   )
 }
 

@@ -1,9 +1,19 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import { WizardContext } from '../components/WizardContext';
+import { useNavigate } from 'react-router-dom';
 
 import Button from "@mui/material/Button";
 
 const Wizard = ({children}) => {
+
+  const { name, setName } = useContext(WizardContext);
+  
+  const navigate = useNavigate();
+  const nav = (path) => {
+      console.log('rerouting');
+      navigate(path);
+  }
+
   const [activePage, setActivePage] = useState(0)
 
   const pages = React.Children.toArray(children)
@@ -18,7 +28,7 @@ const Wizard = ({children}) => {
   }
 
   const submit = () => {
-    setActivePage(index => index - 1)
+    nav('/')
   }
 
   return (
@@ -40,13 +50,14 @@ const Wizard = ({children}) => {
           </Button>
           ) : null }
 
-          { activePage < pages.length + 1 ? (   
+          { activePage < pages.length + 1 && activePage < pages.length - 1 ? (   
           <Button
             type='button'
             className='wButton-right'
             color="info"
             size="small"
             onClick={next}
+            disabled={name}
           >
             Következő
           </Button>
